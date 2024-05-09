@@ -69,3 +69,20 @@ func TestPeek(t *testing.T) {
 		t.Errorf("Expected 3 but got %d", stack.Peek())
 	}
 }
+
+//stack을 비운다.
+func TestClear(t *testing.T) {
+	stack := New()
+	stack.Push(1)
+	stack.Push(2)
+	stack.Push(3)
+	stack.Clear()
+	
+	if stack.Len() != 0 {
+		t.Errorf("Expected 0 but got %d", stack.Len())
+	}
+
+	if stack.top != nil {
+		t.Errorf("Expected nil but got %v", stack.top)
+	}
+}

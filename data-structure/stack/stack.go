@@ -51,3 +51,8 @@ func (s *Stack) Peek() interface{} {
 	return s.top.Value
 }
 
+func (s *Stack) Clear() {
+	s.top = nil
+	s.len = 0
+}
+
