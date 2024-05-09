@@ -29,3 +29,14 @@ func (s* Stack) Push(value interface{}) {
 	s.len++
 }
 
+func (s *Stack) Pop() interface{} {
+	if s.top == nil {
+		return nil
+	}
+	popElem := s.top
+	s.top = popElem.Next
+	s.top.Prev = nil
+	s.len--
+	return popElem.Value
+}
+
