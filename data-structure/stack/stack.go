@@ -40,3 +40,7 @@ func (s *Stack) Pop() interface{} {
 	return popElem.Value
 }
 
+func (s *Stack) IsEmpty() bool {
+	return s.len == 0;
+}
+

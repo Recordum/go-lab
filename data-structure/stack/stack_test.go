@@ -42,4 +42,15 @@ func TestPopEmpty(t *testing.T){
 		t.Errorf("Expected nil but got %d", popValue)
 	}
 }
+//stack이 비어있을 경우 true 반환 아닐경우 false 반환
+func TestIsEmpty(t *testing.T) {
+	stack := New()
+	if !stack.IsEmpty() {
+		t.Errorf("Expected true but got false")
+	}
+	stack.Push(1)
+	if stack.IsEmpty() {
+		t.Errorf("Expected false but got true")
+	}
+}
 
