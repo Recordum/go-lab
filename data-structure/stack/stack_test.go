@@ -3,7 +3,7 @@ package stack
 import "testing"
 
 
-// 
+//stack에 값을 추가한다
 func TestPush(t *testing.T) {
 	stack := New()
 	stack.Push(1)
@@ -15,6 +15,10 @@ func TestPush(t *testing.T) {
 	
 	if stack.Len() != 6 {
 		t.Errorf("Expected 6 but got %d", stack.Len())
+	}
+
+	if stack.top.Value != 6 {
+		t.Errorf("Expected 6 but got %d", stack.top.Value)
 	}
 }
 //가장 최근에 추가된 요소를 제거하고 반환한다.
@@ -54,3 +58,14 @@ func TestIsEmpty(t *testing.T) {
 	}
 }
 
+//stack맨 위에 있는 요소를 반환한다.
+func TestPeek(t *testing.T) {
+	stack := New()
+	stack.Push(1)
+	stack.Push(2)
+	stack.Push(3)
+	
+	if stack.Peek() != 3 {
+		t.Errorf("Expected 3 but got %d", stack.Peek())
+	}
+}
