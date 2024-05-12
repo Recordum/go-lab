@@ -60,3 +60,9 @@ func (q *Queue) Poll() interface{} {
 func (q *Queue) IsEmpty() bool {
 	return q.Len == 0
 }
+
+func (q *Queue) Clear() {
+	q.front = nil
+	q.rear = nil
+	q.Len = 0
+}
