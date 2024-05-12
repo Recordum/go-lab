@@ -56,3 +56,7 @@ func (q *Queue) Poll() interface{} {
 	q.Len--
 	return pollElem.Value
 }
+
+func (q *Queue) IsEmpty() bool {
+	return q.Len == 0
+}
