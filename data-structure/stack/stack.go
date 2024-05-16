@@ -1,7 +1,7 @@
 package stack
 
 import (
-	. "go-lab/data-structure/common"
+	. "go-lab/data-structure/util"
 )
 
 type Stack struct {
@@ -17,7 +17,7 @@ func (s *Stack) Len() int {
 	return s.len
 }
 
-func (s* Stack) Push(value interface{}) {
+func (s *Stack) Push(value interface{}) {
 	elem := &Elem{Value: value}
 	if s.top == nil {
 		s.top = elem
@@ -41,7 +41,7 @@ func (s *Stack) Pop() interface{} {
 }
 
 func (s *Stack) IsEmpty() bool {
-	return s.len == 0;
+	return s.len == 0
 }
 
 func (s *Stack) Peek() interface{} {
@@ -55,4 +55,3 @@ func (s *Stack) Clear() {
 	s.top = nil
 	s.len = 0
 }
-
